@@ -20,6 +20,9 @@ namespace AOC22
                 case "1":
                     Day1.CalorieCount(test, prvni);
                     break;
+                case "3":
+                    Day3.RucksackOrganization(test, prvni);
+                    break;
                 default:
                     break;
             }
