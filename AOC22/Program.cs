@@ -45,6 +45,9 @@ namespace AOC22
                     case 3:
                         Day3.RucksackOrganization(path, prvni);
                         break;
+                    case 4:
+                        Day4.CampCleanup(path, prvni);
+                        break;
                     default:
                         Console.WriteLine("Den mimo rozsah");
                         continue;
