@@ -7,14 +7,8 @@ namespace AOC22
 {
     static class Day1
     {
-        internal static void CalorieCount(bool test, bool prvni)
+        internal static void CalorieCount(string path, bool prvni)
         {
-            string path = "data.txt";
-            if (test)
-                path = "test.txt";
-
-            path = Path.Combine(@"..\..\Days\Day1", path);
-
             List<int> calorieList = new List<int>();
 
             using (StreamReader sr = new StreamReader(path))

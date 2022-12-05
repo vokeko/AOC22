@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace AOC22
@@ -11,14 +9,8 @@ namespace AOC22
     {
         private static List<char> charList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray().ToList();
 
-        internal static void RucksackOrganization(bool test, bool prvni)
+        internal static void RucksackOrganization(string path, bool prvni)
         {
-            string path = "data.txt";
-            if (test)
-                path = "test.txt";
-
-            path = Path.Combine(@"..\..\Days\Day3", path);
-
             using (StreamReader sr = new StreamReader(path))
             {
                 string line;
