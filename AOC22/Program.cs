@@ -48,6 +48,9 @@ namespace AOC22
                     case 4:
                         Day4.CampCleanup(path, prvni);
                         break;
+                    case 5:
+                        Day5.SupplyStacks(path, prvni);
+                        break;
                     default:
                         Console.WriteLine("Den mimo rozsah");
                         continue;
