@@ -51,6 +51,9 @@ namespace AOC22
                     case 5:
                         Day5.SupplyStacks(path, prvni);
                         break;
+                    case 6:
+                        Day6.TuningTrouble(path, prvni);
+                        break;
                     default:
                         Console.WriteLine("Den mimo rozsah");
                         continue;

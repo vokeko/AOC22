@@ -51,11 +51,16 @@
     <Compile Include="Days\Day3\Day3.cs" />
     <Compile Include="Days\Day4\Day4.cs" />
     <Compile Include="Days\Day5\Day5.cs" />
+    <Compile Include="Days\Day6\Day6.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Days\Day6\data.txt" />
+    <Content Include="Days\Day6\test.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
