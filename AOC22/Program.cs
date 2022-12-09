@@ -54,6 +54,9 @@ namespace AOC22
                     case 6:
                         Day6.TuningTrouble(path, prvni);
                         break;
+                    case 9:
+                        Day9.RopeBridge(path, prvni);
+                        break;
                     default:
                         Console.WriteLine("Den mimo rozsah");
                         continue;
