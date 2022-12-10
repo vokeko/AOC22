@@ -53,6 +53,23 @@ namespace AOC22
                     }
                 }
             }
+            else
+            {
+                List<Position> knots = new List<Position>();
+                for (int k = 0; k < 9; k++)
+                {
+                    knots.Add(new Position { X = grid.GetLength(1) / 2, Y = grid.GetLength(0) / 2 });
+                }
+
+                foreach (Instruction instruction in Instructions)
+                {
+                    for (int i = 0; i < instruction.Steps; i++)
+                    {
+                        StepPart2(ref knots, ref headPosition, instruction.Direction);
+                        grid[knots[8].X, knots[8].Y] = true;
+                    }
+                }
+            }
 
             Console.WriteLine("Počet: {0}", SumArray(grid));
         }
@@ -101,9 +118,9 @@ namespace AOC22
 
         private static void StepPart1(ref Position tailPosition, ref Position headPosition, Direction headDirection)
         {
-            var tempHeadPosition = headPosition;
-            var tempTailPosition = tailPosition;
-            tempHeadPosition = Move(headDirection, headPosition);
+            Position tempTailPosition = tailPosition;
+            Position tempHeadPosition = Move(headDirection, headPosition);
+
             Direction tailDirection = getTailDirection();
 
             tailPosition = Move(tailDirection, tailPosition);
@@ -139,6 +156,55 @@ namespace AOC22
                         else if (tempTailPosition.Y > tempHeadPosition.Y && tempTailPosition.X > tempHeadPosition.X)
                             tempDirection = Direction.SouthWest;
                         else if (tempTailPosition.Y > tempHeadPosition.Y && tempTailPosition.X < tempHeadPosition.X)
+                            tempDirection = Direction.SouthEast;
+                    }
+                }
+
+                return tempDirection;
+            }
+        }
+
+        private static void StepPart2(ref List<Position> knots, ref Position headPosition, Direction headDirection)
+        {
+            Position tempHeadPosition = Move(headDirection, headPosition);
+            headPosition = tempHeadPosition;
+
+            for (int k = 0; k < knots.Count; k++)
+            {
+                Direction knotDirection = getKnotDirection(knots[k], k == 0 ? headPosition : knots[k - 1]);
+                knots[k] = Move(knotDirection, knots[k]);
+            }
+            
+            return;
+
+            Direction getKnotDirection(Position thisKnot, Position previousKnot)
+            {
+                Direction tempDirection = default;
+                if (Math.Abs(thisKnot.X - previousKnot.X) > 1 || Math.Abs(previousKnot.X - thisKnot.X) > 1 || Math.Abs(thisKnot.Y - previousKnot.Y) > 1 || Math.Abs(previousKnot.Y - thisKnot.Y) > 1)
+                {
+                    if (thisKnot.X == previousKnot.X)
+                    {
+                        if (thisKnot.Y > previousKnot.Y)
+                            tempDirection = Direction.South;
+                        else
+                            tempDirection = Direction.North;
+                    }
+                    else if (thisKnot.Y == previousKnot.Y)
+                    {
+                        if (thisKnot.X > previousKnot.X)
+                            tempDirection = Direction.West;
+                        else
+                            tempDirection = Direction.East;
+                    }
+                    else
+                    {
+                        if (thisKnot.X > previousKnot.X && thisKnot.Y < previousKnot.Y)
+                            tempDirection = Direction.NorthWest;
+                        else if (thisKnot.Y < previousKnot.Y && thisKnot.X < previousKnot.X)
+                            tempDirection = Direction.NorthEast;
+                        else if (thisKnot.Y > previousKnot.Y && thisKnot.X > previousKnot.X)
+                            tempDirection = Direction.SouthWest;
+                        else if (thisKnot.Y > previousKnot.Y && thisKnot.X < previousKnot.X)
                             tempDirection = Direction.SouthEast;
                     }
                 }
