@@ -60,8 +60,14 @@ namespace AOC22
                     case 10:
                         Day10.CathodeRayTube(path, prvni);
                         break;
+                    case 11:
+                        Day11.MonkeyBusiness(path, prvni);
+                        break;
                     case 14:
                         Day14.RegolithReservoir(path, prvni);
+                        break;
+                    case 18:
+                        Day18.BoilingBoulders(path, prvni);
                         break;
                     default:
                         Console.WriteLine("Den mimo rozsah");
