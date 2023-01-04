@@ -57,6 +57,9 @@ namespace AOC22
                     case 9:
                         Day9.RopeBridge(path, prvni);
                         break;
+                    case 10:
+                        Day10.CathodeRayTube(path, prvni);
+                        break;
                     default:
                         Console.WriteLine("Den mimo rozsah");
                         continue;
