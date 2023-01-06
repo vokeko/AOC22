@@ -52,12 +52,14 @@
     <Compile Include="Days\Day18\Day18.cs" />
     <Compile Include="Days\Day20\Day20.cs" />
     <Compile Include="Days\Day1\Day1.cs" />
+    <Compile Include="Days\Day21\Day21.cs" />
     <Compile Include="Days\Day2\Day2.cs" />
     <Compile Include="Days\Day3\Day3.cs" />
     <Compile Include="Days\Day4\Day4.cs" />
     <Compile Include="Days\Day5\Day5.cs" />
     <Compile Include="Days\Day6\Day6.cs" />
     <Compile Include="Days\Day9\Day9.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

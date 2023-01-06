@@ -72,6 +72,9 @@ namespace AOC22
                     case 20:
                         Day20.GrovePositioningSystem(path, prvni);
                         break;
+                    case 21:
+                        Day21.MonkeyMatch(path, prvni);
+                        break;
                     default:
                         Console.WriteLine("Den mimo rozsah");
                         continue;
