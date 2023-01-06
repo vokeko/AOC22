@@ -69,6 +69,9 @@ namespace AOC22
                     case 18:
                         Day18.BoilingBoulders(path, prvni);
                         break;
+                    case 20:
+                        Day20.GrovePositioningSystem(path, prvni);
+                        break;
                     default:
                         Console.WriteLine("Den mimo rozsah");
                         continue;
