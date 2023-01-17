@@ -78,6 +78,9 @@ namespace AOC22
                     case 21:
                         Day21.MonkeyMatch(path, prvni);
                         break;
+                    case 23:
+                        Day23.UnstableDiffusion(path, prvni);
+                        break;
                     default:
                         Console.WriteLine("Den mimo rozsah");
                         continue;
